@@ -1,0 +1,57 @@
+<!doctype HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="Styles/projectPageStyles.css">
+    </head>
+    <body>
+        <section class="HeadingSection">
+            <div id="heading"> 
+                <h1>{{details['name']}}</h1>
+            </div>
+        </section>
+
+        <section class="DetailSection">
+            <div class="Details">
+                <div id="DetailTitle">
+                    <h2><u>Details</u></h2>
+                </div>
+                <div id="Detail">
+                    <h3>Summary:</h3>
+                    <p>{{details['summary']}}</p>
+                
+                    <h3>Languages Used:</h3>
+                    <p>{{details['languages']}}</p>
+                
+                    <h3>Developers:</h3>
+                    <p>{{details['developers']}}</p>
+                
+                    <h3>My Contribution:</h3>
+                    <p>{{details['contribution']}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="SourceSection">
+
+        </section>
+
+        <section class="ImageSection">
+            <div class="partialImageSection" style="border-bottom: solid; background-color: grey;">
+                <h2><u>Photos of Project</u></h2>
+            </div>
+            <div class="partialImageSection">
+
+                {%for image in images %}
+                    <img src = "{{ url_for('static', filename='images/' + details['name'] + image) }}" class = "mySlides">
+                {% endfor %}
+
+            </div>
+            <div class="partialImageSection" style="border-top: solid; background-color: grey;">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </section>
+        
+        <script src = "{{ url_for('static', filename='projectPage.js')}}"></script>
+    </body>
+</html>

@@ -1,0 +1,164 @@
+body {
+    background-image: url('images/background.jpg');
+    /* background-color:bisque; */
+    background-size: cover;
+}
+
+.HeadingSection {
+    height: 10vw;
+    background-color: none;
+
+    margin: 0vw;
+    padding: 0vw;
+
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(1, 5vw);
+}
+
+#heading {
+    grid-column: 2/3;
+    background-color: lightblue;
+    border: solid;
+
+    position: relative; 
+    top: 2vw; 
+}
+
+#heading h1 {
+    color: white;
+    font-size: 3vw;
+
+    padding: 0px;
+    margin:  0px;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    position: relative; 
+    top: 0.5vw; 
+
+}
+
+.DetailSection {
+    display: grid; 
+
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: repeat(1, 30vw);
+
+}
+
+.Details {
+    grid-column: 2/3;
+
+    display: grid; 
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 5vw 60vw;
+
+    background-color: white;
+
+    overflow-y: scroll; 
+
+}
+
+#DetailTitle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2vw;
+
+    border-bottom: solid; 
+}
+#Detail {
+    display: flex;
+    flex-direction: column;
+
+
+    margin: 0vw;
+    padding: 0vw;
+    padding-left: 1vw; 
+    font-size: 2vw;
+    
+}
+
+#Detail p {
+    margin: 1vw;
+}
+
+
+h3 {
+    text-decoration: none;
+    padding: 0vw;
+    margin: 0vw;
+}
+
+
+
+
+
+
+
+
+
+
+.ImageSection {
+    display: grid; 
+
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 5vw 40vw 5vw;
+
+    margin: 1vw;
+}
+
+.partialImageSection {
+    grid-column: 2/3; 
+    background-color: white;
+    font-size: 2vw;
+
+    display: flex; 
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.mySlides {
+    display: none; 
+    
+    width: 60vw;
+    height: auto; 
+    max-height: 40vw;
+}
+
+.mySlides:first-child {
+    display: block;
+}
+
+.prev,
+.next {
+    position: relative;
+    width: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
