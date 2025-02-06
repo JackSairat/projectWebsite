@@ -12,12 +12,30 @@ body {
     padding: 0vw;
 
     display: grid; 
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 6fr 3fr;
     grid-template-rows: repeat(1, 5vw);
 }
 
+
+#backSection {
+    grid-column: 2/5;
+    
+    padding: 0vw;
+    margin: 0vw;
+
+    position: relative; 
+
+    top: -3vw; 
+}
+
+#backSection a {
+    font-size: 3vw;
+    text-decoration: none;
+}
+
+
 #heading {
-    grid-column: 2/3;
+    grid-column: 4/5;
     background-color: lightblue;
     border: solid;
 
