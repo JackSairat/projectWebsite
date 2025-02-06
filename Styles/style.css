@@ -60,25 +60,36 @@
     font-weight: normal;
 }
 
-.outputSection {
+.interactiveSection {
     margin: 0vw;
     padding: 1vw;
 
     display: grid; 
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: repeat(1, 60vw);
+    grid-template-columns: 0.1fr 1fr 2fr 0.1fr;
+    grid-template-rows: 5vw 50vw;
 
 }
 
 #output {
-    grid-column: 2/3;
+    grid-column: 3/4;
     background-color: white;
 }
 
-#output h2 {
+#outputTitle {
+    grid-column: 3/4;
+    background-color: grey;
+    margin: 0vw; 
+    padding: 0vw;
+}
+
+
+#outputTitle h2 {
     display: flex;
     font-size: 3vw;
     justify-content: center;
+
+    position: relative; 
+    top: -1.5vw; 
 }
 
 .outputCells {
@@ -87,12 +98,15 @@
 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1, 5vw); 
-
-    font-size: 2vw;
+    
 }
 
 .cell {
     padding: 1vw;
+}
+
+.cell a button {
+    font-size: 2vw;
 }
 
 
