@@ -19,13 +19,13 @@
 }
 
 
-#submitButton {
+/* #submitButton {
     position: relative; 
     font-size: 2vw;
     left: 30vw;
-}
+} */
 
-.choiceSection {
+/* .choiceSection {
     margin: 0vw;
     padding: 1vw;
 
@@ -37,10 +37,10 @@
 #choices {
     grid-column: 2/3;
     background-color: white;
-}
+} */
 
 
-.filters {
+/* .filters {
     display: grid; 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1, 8vw);
@@ -58,7 +58,86 @@
 .filters label {
     font-size: 1.5vw;
     font-weight: normal;
+} */
+
+#filterTitle {
+    background-color: grey;
+
+    grid-column: 2; 
+    grid-row: 1;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+    border: solid; 
 }
+
+#filterTitle h2 {
+    font-size: 3vw; 
+}
+
+#filters {
+    background-color: lightgray;
+    
+    grid-column: 2;
+    grid-column: 2;
+
+    font-size: 2vw;
+
+    display: grid; 
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 10vw)
+}
+
+#filters h3 {
+    padding: 0vw;
+    padding-top: 2vw;
+    padding-bottom: 1vw; 
+    margin: 0vw; 
+
+    font-size: 2vw; 
+
+}
+
+#languageFilters {
+    grid-column: 1;
+    grid-row: 1; 
+
+}
+
+#projectTypeFilters {
+    grid-column: 1;
+    grid-row: 2;
+    max-height: 10vw;
+}
+
+#subjetFilter {
+    grid-column: 1; 
+    grid-row: 3; 
+
+}
+
+.submitButton {
+    grid-column: 1; 
+    grid-row: 4;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    margin: 1vw
+}
+
+.submitButton input {
+    font-size: 2vw;
+}
+
+
+
+
+
 
 .interactiveSection {
     margin: 0vw;
@@ -72,11 +151,15 @@
 
 #output {
     grid-column: 3/4;
+    grid-row: 2/2;
+
     background-color: white;
 }
 
 #outputTitle {
     grid-column: 3/4;
+    grid-row: 1/2;
+
     background-color: grey;
     margin: 0vw; 
     padding: 0vw;
@@ -98,7 +181,7 @@
 
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1, 5vw); 
-    
+
 }
 
 .cell {
@@ -140,6 +223,6 @@
 body {
     background-image: url('images/background.jpg');
     /* background-color:bisque; */
-    background-size: cover;
+    background-size: contain;
 
 }

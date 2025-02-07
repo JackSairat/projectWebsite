@@ -17,7 +17,7 @@
 
         <!-- Options -->
         <section>
-            <form method = "POST" action="/">
+            <!-- <form method = "POST" action="/">
                 <div class = "choiceSection">
                     <div id = "choices">
 
@@ -66,13 +66,71 @@
                     </div>
 
                 </div>
-            </form>   
+            </form>    -->
         </section>
 
         <!-- Output -->
          
         <section>
             <div class="interactiveSection">
+
+                <div id="filterTitle">
+                    <h2>Filters</h2>
+                </div>
+                <div id="filters"> 
+
+                    <form method = "POST" action="/"> 
+                        <div class="languageFilters">
+                            <h3><u>Languages</u></h3>
+
+                            <label for="python">Python</label>
+                            <input type="checkbox" id="python" name="language" value="python">
+
+                            <label for="java">Java</label>
+                            <input type= "checkbox" id = "java" name="language" value="java">
+
+                            <label for="c++">C++</label>
+                            <input type="checkbox" id="c++" name="language" value="css">
+
+                            <label for="css">CSS</label>
+                            <input type="checkbox" id="css" name="language" value="css">
+
+                            <label for="sql">SQL</label>
+                            <input type="checkbox" id="sql" name="language" value="sql">
+
+                            <label for="html">HTML</label>
+                            <input type="checkbox" id="html" name="language" value="html">
+
+                            <label for="lc3">LC3</label>
+                            <input type="checkbox" id="lc3" name="language" value="lc3"> 
+                        </div>
+
+                        <div class="projectTypeFilters">
+                            <h3><u>Project Type</u></h3>
+
+                            <label for="individual">Individual</label>
+                            <input type="radio" id="individual" name="projectType" value="individual">
+                            <label for="team">Team</label>
+                            <input type="radio" id="team" name="projectType" value="team">
+                            <label for="all">All</label>
+                            <input type="radio" id="all" name="projectType" value="all">
+                        </div>
+
+                        <div class="subjectFilter">
+                            <h3><u>Subject</u></h3>
+                            <p>No Available Filters</p>
+                        </div>
+
+                        <div class="submitButton">
+                            <input type="submit">
+                        </div>
+                    
+                    </form>
+                </div>
+
+
+
+
                 <div id="outputTitle">
                     <h2>Output</h2>
                 </div>
@@ -89,6 +147,7 @@
                     </div>
                     
                 </div>
+                
             </div>
         </section>
 
