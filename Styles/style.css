@@ -19,47 +19,6 @@
 }
 
 
-/* #submitButton {
-    position: relative; 
-    font-size: 2vw;
-    left: 30vw;
-} */
-
-/* .choiceSection {
-    margin: 0vw;
-    padding: 1vw;
-
-    display: grid; 
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-rows: 12vw 5vw;
-}
-
-#choices {
-    grid-column: 2/3;
-    background-color: white;
-} */
-
-
-/* .filters {
-    display: grid; 
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1, 8vw);
-
-    padding: 1vw;
-    height: 7vw;
-}
-
-.filters h3 {
-    font-size: 2vw;
-    padding: 0vw;
-    margin: 0vw;
-}
-
-.filters label {
-    font-size: 1.5vw;
-    font-weight: normal;
-} */
-
 #filterTitle {
     background-color: grey;
 
@@ -71,6 +30,7 @@
     justify-content: center;
     
     border: solid; 
+    border-left: none;
 }
 
 #filterTitle h2 {
@@ -196,18 +156,23 @@
     grid-row: 1/2;
 
     background-color: grey;
+
     margin: 0vw; 
     padding: 0vw;
+
+    border: solid; 
+    border-left: none;
+    border-right: none;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 
 #outputTitle h2 {
-    display: flex;
     font-size: 3vw;
-    justify-content: center;
-
     position: relative; 
-    top: -1.5vw; 
 }
 
 .outputCells {
