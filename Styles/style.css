@@ -130,6 +130,7 @@
 
 #projectTypes {
     /* Add stuff later like "display: none; " */
+    display: none;
 }
 
 #subjetFilter {
@@ -140,6 +141,7 @@
 
 #subjects {
     /* Add stuff later like "display: none; " */
+    display: none; 
 }
 
 .submitButton {

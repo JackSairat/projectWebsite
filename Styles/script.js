@@ -38,7 +38,9 @@ window.onload = function() {
             console.log("Element has been CLICK!"); 
             console.log("Element Value: " + elementValue);
 
-            if ( (elementValue === "languages") ) {
+            if ( (elementValue === "languages") || 
+                (elementValue === "projectTypes") ||
+                (elementValue === "subjects")) {
                 editDisplay(elementValue);
             }
         });
