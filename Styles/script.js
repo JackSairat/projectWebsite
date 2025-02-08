@@ -32,9 +32,35 @@ window.onload = function() {
     for (let i = 0; i < filterInstances.length; ++i){
         filterInstances[i].addEventListener('click', function(event) {
             let filterInstance = filterInstances[i];
+
+            console.log("Title Size: " +  filterInstance.style.fontSize); 
+
+            if ( (filterInstance.style.fontSize === '2vw') ||
+                (filterInstance.style.fontSize === "") ) {
+
+                filterInstance.style.fontSize = '2.5vw';
+            }
+            else if (filterInstance.style.fontSize === '2.5vw') {
+                filterInstance.style.fontSize = '2vw'; 
+            }
+
+            console.log("New Title Size: " +  filterInstance.style.fontSize); 
+
+            let instanceContents = filterInstance.textContent; 
+
+            console.log("Title: " +  instanceContents); 
+
+            if (instanceContents.charAt(0) === '+') {
+                filterInstance.textContent = "-" + (instanceContents.substring(1));
+            }
+            else if (instanceContents.charAt(0) === '-') {
+                filterInstance.textContent = "+" + (instanceContents.substring(1));
+            }
+
+            console.log("New Title: " +  filterInstance.textContent); 
+
             let elementValue = filterInstance.getAttribute('value'); 
 
-    
             console.log("Element has been CLICK!"); 
             console.log("Element Value: " + elementValue);
 
