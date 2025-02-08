@@ -25,3 +25,38 @@ document.querySelectorAll('a').forEach(link => {
 
 }); 
 
+
+window.onload = function() {
+    let filterInstances = document.getElementsByClassName("filterInstance")
+    
+    for (let i = 0; i < filterInstances.length; ++i){
+        filterInstances[i].addEventListener('click', function(event) {
+            let filterInstance = filterInstances[i];
+            let elementValue = filterInstance.getAttribute('value'); 
+
+    
+            console.log("Element has been CLICK!"); 
+            console.log("Element Value: " + elementValue);
+
+            if ( (elementValue === "languages") ) {
+                editDisplay(elementValue);
+            }
+        });
+    }
+};
+
+function editDisplay(elementID) {
+    let dropBar = document.getElementById(elementID); 
+    let displayValue = dropBar.style.display; 
+
+    console.log("Display Value: " + displayValue);
+    if ( (displayValue === "none") || (displayValue === "") ) {
+        dropBar.style.display = 'block'; 
+    }
+    else if (displayValue === "block") {
+        dropBar.style.display = 'none'; 
+    }
+
+    displayValue = dropBar.style.display; 
+    console.log("New Display Value: " + displayValue); 
+}

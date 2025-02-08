@@ -88,24 +88,39 @@
     display: grid; 
 
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 10vw)
+    grid-template-rows: repeat(5, 10vw); 
+
+    padding: 1vw; 
 }
 
 #filters h3 {
     padding: 0vw;
     padding-top: 2vw;
     padding-bottom: 1vw; 
+
     margin: 0vw; 
 
     font-size: 2vw; 
 
 }
 
+#filters p {
+    padding: 0vw;
+    margin: 0vw; 
+}
+
 #languageFilters {
     grid-column: 1;
     grid-row: 1; 
-
 }
+
+#languages {
+    /* Add stuff later like "display: none;" */
+    display: none; 
+    flex-direction: column;
+    
+}
+
 
 #projectTypeFilters {
     grid-column: 1;
@@ -113,10 +128,18 @@
     max-height: 10vw;
 }
 
+#projectTypes {
+    /* Add stuff later like "display: none; " */
+}
+
 #subjetFilter {
     grid-column: 1; 
     grid-row: 3; 
 
+}
+
+#subjects {
+    /* Add stuff later like "display: none; " */
 }
 
 .submitButton {
