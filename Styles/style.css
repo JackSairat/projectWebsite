@@ -18,6 +18,44 @@
     background-color: mediumturquoise;
 }
 
+#summarySection {
+    display: grid; 
+    grid-template-columns: 1fr 30fr 1fr;
+    grid-template-rows: 5vw, 20vw;
+
+}
+
+#summaryTitle {
+    grid-row: 1;
+    grid-column: 2;
+    
+    background-color: grey;
+
+    font-size: 2vw; 
+
+    margin: 0vw; 
+    padding: 0vw;
+}
+
+#summaryTitle h2{
+    margin: 1vw; 
+}
+
+#summmaryContents {
+    grid-row: 2;
+    grid-column: 2; 
+    
+    background-color: white;
+
+    font-size: 2vw; 
+
+    padding: 1vw;
+}
+
+#summaryContents p {
+    padding: 10vw;
+    margin: 10vw;
+}
 
 #filterTitle {
     background-color: grey;
@@ -225,4 +263,5 @@ body {
     /* background-color:bisque; */
     background-size: contain;
 
+  
 }
