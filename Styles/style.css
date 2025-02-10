@@ -268,7 +268,7 @@ body {
   
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     #summmaryContents {
         grid-row: 2;
         grid-column: 2; 
@@ -289,11 +289,5 @@ body {
     
     }
 
-    .footerSection {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 10vw;
-        
-        background-color: mediumturquoise;
-    }
+    
 }
