@@ -57,6 +57,7 @@
 #summaryContents p {
     padding: 10vw;
     margin: 10vw;
+    font-size: 2vw; 
 }
 
 #filterTitle {
