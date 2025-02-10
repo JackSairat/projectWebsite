@@ -268,7 +268,7 @@ body {
   
 }
 
-@media (max-width: 490px) {
+@media (max-width: 491px) {
     #summmaryContents {
         grid-row: 2;
         grid-column: 2; 
