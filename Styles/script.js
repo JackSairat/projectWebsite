@@ -3,7 +3,8 @@ fetch('/get_rowCount')
     .then(response => response.json())
     .then(data => {
     const container = document.getElementsByClassName('outputCells')[0];
-    //Gets the number of project names. 
+
+    //Gets the number of project names, from the /get_CountRow in main.py.
     var numItems = data.length; 
 
     //Each row will hold 2 project names, therefore 
@@ -16,15 +17,27 @@ fetch('/get_rowCount')
     })
     .catch(error => console.error('Error fetching data:', error)); 
 
+//This line makes it so that the block of code below will run, 
+// when any link in Home page is clicked. 
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(event) {
+
+        //Gets the body contents assigned to the link clicked 
+        // (ususally the name of the project) from the home page. 
+        // And stores it into a variable called "linkName"
         var linkName = this.textContent; 
 
+        //Creates request and sends it to /get_linkName in main.py. 
         fetch('/get_linkName', {
+            //Sepecifies that its a Post request. 
             method: 'POST',
             headers: {
+                
+                //Sepecifies the type of content in the request. 
                 'Content-Type': 'application/json'
             },
+
+            //Stores linkName in the body.
             body: JSON.stringify({ linkName: linkName })
         })
 

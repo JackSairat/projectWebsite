@@ -108,16 +108,21 @@ def get_rowCount():
     return jsonify(itemList)
 
 
-
+#Its purpose is to catch the Post requests sent by the code in the script.js file. 
 @app.route('/get_linkName', methods = ['POST'])
 def get_linkName():
 
     global chosenProject; 
 
+    #Gets the JSON String (IDK what that is) from the body of the Post request. 
     data = request.get_json()
+
+    #Retrieve variable "linkName" from the JSON String. 
     linkName = data.get('linkName')
+
     print(f"Project Chosen: {linkName}")
 
+    #Assign chosenProject with linkName so it can be used in /new_Page rendering. 
     chosenProject = linkName
 
     return jsonify()
