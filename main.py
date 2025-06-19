@@ -5,7 +5,7 @@ import functions
 app = Flask(__name__, template_folder='Pages', static_folder='Styles')
 
 
-
+# Set default values to html variables. 
 itemList = ["Unknown"]
 chosenProject = "Unknown"
 
@@ -78,7 +78,7 @@ def index():
 
         # Get projects based on user determined specifications from the database. 
         result = functions.determineOutput(connection, languageList, type)
-        
+
         # Extract the names of the projects from the output of the sql query results. 
         output = functions.formatOutput(result)
         itemList = output
@@ -87,6 +87,7 @@ def index():
         print(itemList)
         print("-------------Finished Check-------------")
 
+        #Render Home page using the found project names as a variable.
         return render_template('Home.html', output = itemList)
     else:
         # If no post request, render home page using default variables. 
@@ -123,23 +124,34 @@ def get_linkName():
 #THIS CODE IS FOR PROJECT PAGES
 @app.route('/new_Page')
 def new_Page():
-    #Establish connection to the sql database
+    #Establish connection to the sql database. 
     connection = get_Database_Connection()
+
+    #Get chosen project contents from database as a sqlite3.Row object. 
     result = functions.getProjectData(connection, chosenProject)
 
     print("------------STARTING NEW PAGE-----------")
     print(f"Result: {result}")
+
+    #If there is information on chosen project,
+    # render project page. 
     if (result != "nothing") and (len(result) != 0):
         print("opening page...")
-        projectDetails = result[0]
 
-        numImages = projectDetails['numImages']
+        projectDetails = result[0] #Gets the first row from sqlite3.Row object. 
+
+        numImages = projectDetails['numImages'] # Gets contents under "numImages" column. 
         images = []
 
+        #store image names into "images" list. 
         for i in range(numImages):
             images.append(f"/image{i+1}.png")
 
+        #Render projectPage.html
         return render_template('projectPage.html', details = projectDetails, images=images)
+    
+    #If there isn't any information on chosen project,
+    # render home page. 
     else:
         print("page failed to oepen")
     print("------------FINISHED PROCESS------------")
