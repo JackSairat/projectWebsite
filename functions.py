@@ -105,7 +105,7 @@ def determineOutput(connection, languages, projectType):
 
 def formatOutput(result): 
 
-    print("------------Constructing HTML------------")
+    print("------------GETTING PROJECT NAMES------------")
 
     # output = ""
 
@@ -131,6 +131,6 @@ def formatOutput(result):
 
     print()
 
-    print("--------------Finished HTML--------------")
+    print("--------------FINISHED GETTING PROJECTS--------------")
 
     return output

@@ -66,11 +66,20 @@ def index():
             languages = "Not chosen"
         
         try: 
+            #From Post request, get project type selected by user: 
+            #   * list of the different project types are seen in 
+            #     Home.html.
+            #   * User can select project types through radio buttons. 
             type = request.form['projectType']
         except:
+            print("Error: Failed to get chosen project type.")
+            print("       Porject type set to \"Not Chosen \".")
             type = "Not chosen"
 
+        # Get projects based on user determined specifications from the database. 
         result = functions.determineOutput(connection, languageList, type)
+        
+        # Extract the names of the projects from the output of the sql query results. 
         output = functions.formatOutput(result)
         itemList = output
         
@@ -80,6 +89,8 @@ def index():
 
         return render_template('Home.html', output = itemList)
     else:
+        # If no post request, render home page using default variables. 
+        # Normally only done if application just been opened. 
         return render_template('Home.html', output = itemList)
     
 
