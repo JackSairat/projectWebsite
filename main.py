@@ -95,7 +95,8 @@ def index():
         return render_template('Home.html', output = itemList)
     
 
-
+#Used to send itemList to script.js in order to, 
+# determine the number of rows in the output section of Home.html
 @app.route('/get_rowCount')
 def get_rowCount():
     print("------Starting JavaScript Process-------")
@@ -103,6 +104,7 @@ def get_rowCount():
     print("Item List: ", end="")
     print(itemList)
     print()
+    # pretty sure this sends itemList to script.js for use.
     return jsonify(itemList)
 
 

@@ -3,8 +3,15 @@ fetch('/get_rowCount')
     .then(response => response.json())
     .then(data => {
     const container = document.getElementsByClassName('outputCells')[0];
+    //Gets the number of project names. 
     var numItems = data.length; 
+
+    //Each row will hold 2 project names, therefore 
+    // the number of rows will be half the number of projects. 
     var numRows = Math.ceil(numItems/2); 
+
+    //edit Home.html so that it would include the required 
+    // number of rows to display the projects. 
     container.style.gridTemplateRows = `repeat(${numRows}, 5vw)`; 
     })
     .catch(error => console.error('Error fetching data:', error)); 
