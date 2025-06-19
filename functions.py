@@ -57,7 +57,8 @@ def getProjectData(connection, chosenProject):
 
     return result
 
-
+#Gets projects from databased that match
+# user's provided parameters.  
 def determineOutput(connection, languages, projectType): 
 
     print("-------------CREATE REQUEST-------------")
@@ -65,19 +66,23 @@ def determineOutput(connection, languages, projectType):
     print(f"Number of Languages: {len(languages)}")
     print(f"Project Type: {projectType}")
 
+    #Setup default request. 
     request = "SELECT name FROM projects "
 
     conditionSet = False
-
+    
+    #Checks to see if the User has chosen a project type, 
+    # and to see if the project type is not "all". 
     if ((str(projectType) != "all") and (str(projectType) != "Not chosen")): 
         conditionSet = True
+
+        #Adds project type to the sql query. 
         request += f"WHERE (projectType = '{projectType}') "
 
+    #Checks if user chosen specific langauges. 
     if (len(languages) != 0):
         if (conditionSet != True): 
             request += "WHERE"
-        else:
-            request += "AND"
         
         for i in range(len(languages) - 1): 
             if ((conditionSet == True) or (i > 1)): 
