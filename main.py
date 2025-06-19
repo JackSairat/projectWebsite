@@ -18,7 +18,7 @@ def get_Database_Connection():
         #Database's stored location is Database/projectDatabase.db
         conn = sqlite3.connect('Database/projectDatabase.db')
         print("trying to connect row_factory")
-        #Indicate that you want the output from queries done by cursers to: 
+        #Indicate that you want the output from queries done by cursers to
         # be in the form of a sqlite3.Row class not a regular tuple. 
         conn.row_factory = sqlite3.Row
         print("Connection to Database Successfull")
@@ -50,9 +50,10 @@ def index():
             #From the POST Request, get all the languages that have been chosen. 
             #   * The full list of languages are seen in Home.html. 
             #   * As seen in Home.html users pick languages by clicking their
-            #   * corresponding check box. 
+            #     corresponding check box. 
             languageList = request.form.getlist('language')
 
+            # Add all chosen languages into String variable "languages".
             for language in languageList: 
                 languages += str(language) + ", " 
 
@@ -60,6 +61,8 @@ def index():
                 languages = "Not chosen"
 
         except:
+            print("Error: Failed to get chosen langauges.")
+            print("       Languages being set to \"Not Chosen\".")
             languages = "Not chosen"
         
         try: 
