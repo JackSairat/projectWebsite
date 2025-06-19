@@ -1,3 +1,5 @@
+#This transforms chosen langauges into suitable,
+# and add them to the sql query. 
 def addLanguageToRequest(request, language):
     print(f"Checking Element: {language}")
     if (str(language) == "python"):
@@ -19,7 +21,7 @@ def addLanguageToRequest(request, language):
 
     return request
 
-
+#This functions gets details of the user's chosen project. 
 def getProjectData(connection, chosenProject):
     print("---------GETTING PROJECT DETAILS---------")
 
@@ -28,13 +30,19 @@ def getProjectData(connection, chosenProject):
     print(f"Project Chosen: {chosenProject}")
 
     if (chosenProject != "No Result Available") and (chosenProject != "Unknown"):
+
+        #Forms sql query. 
         request = f"SELECT * FROM info WHERE name='{chosenProject}';\n"
         print(f"Request: {request}")
 
+        #Creates curser with connection to database. 
         curser = connection.cursor()
+        #Sends sql query to database. 
         curser.execute(request)
+        #Store results of sql query. 
         result = curser.fetchall()
 
+        #Used for debugging: Sees results of sql query. 
         for item in result:
             print(f"Project Name: {item['name']}\n")
             print(f"Summary: {item['summary']}\n")
