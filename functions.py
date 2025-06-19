@@ -84,19 +84,19 @@ def determineOutput(connection, languages, projectType):
         if (conditionSet != True): 
             request += "WHERE"
         
-        for i in range(len(languages) - 1): 
+        for i in range(len(languages)): # if broken change to len(languages) - 1
             if ((conditionSet == True) or (i > 1)): 
                 request += " AND "
 
             request = addLanguageToRequest(request, languages[i])
 
-            if ((i + 1) == len(languages) - 1): 
-                request += " AND "
+            # if ((i + 1) == len(languages) - 1): 
+            #     request += " AND "
             
             conditionSet = True
 
         
-        request = addLanguageToRequest(request, languages[len(languages) - 1])
+        # request = addLanguageToRequest(request, languages[len(languages) - 1])
 
     request += ";"
 
