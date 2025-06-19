@@ -98,12 +98,14 @@ def determineOutput(connection, languages, projectType):
         
         # request = addLanguageToRequest(request, languages[len(languages) - 1])
 
-    request += ";"
+    request += ";" # Marks the end of the sql query.  
 
     print(f"Request: {request}")
 
     cursor = connection.cursor()
+    #Send sql query to database. 
     cursor.execute(request)
+    #Store results of the sql query. 
     result = cursor.fetchall()
 
     print(f"Number of Result Found form SQL query: {len(result)}")
@@ -115,7 +117,7 @@ def determineOutput(connection, languages, projectType):
 
 
 
-
+#This function extracts the project names from the sql query results. 
 def formatOutput(result): 
 
     print("------------GETTING PROJECT NAMES------------")
@@ -131,9 +133,11 @@ def formatOutput(result):
     # print(output)
 
     output = []
+    # Goes through every row, and gets the value under "name". 
     for item in result: 
         output.append(item['name'])
 
+    #Checks if any project names are provided in the results. 
     if (len(output) == 0): 
         output = ["No Result Available."]
         
@@ -146,4 +150,5 @@ def formatOutput(result):
 
     print("--------------FINISHED GETTING PROJECTS--------------")
 
+    #Returns found project names. 
     return output
