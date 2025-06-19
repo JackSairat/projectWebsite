@@ -24,7 +24,7 @@ def get_Database_Connection():
     return conn
 
 
-
+#THIS CODE IS FOR THE HOME PAGE
 @app.route('/', methods = ['GET','POST'])
 def index():
 
@@ -93,7 +93,7 @@ def get_linkName():
     return jsonify()
 
 
-
+#THIS CODE IS FOR PROJECT PAGES
 @app.route('/new_Page')
 def new_Page():
     connection = get_Database_Connection()
