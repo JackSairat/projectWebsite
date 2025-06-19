@@ -9,13 +9,17 @@ app = Flask(__name__, template_folder='Pages', static_folder='Styles')
 itemList = ["Unknown"]
 chosenProject = "Unknown"
 
-
+#Get connection to SQL database
 def get_Database_Connection():
     conn = "Empty"
     try:
         print("trying to connect to Database")
+        #Try to connect to sql database. 
+        #Database's stored location is Database/projectDatabase.db
         conn = sqlite3.connect('Database/projectDatabase.db')
         print("trying to connect row_factory")
+        #Indicate that you want the output from queries done by cursers to: 
+        # be in the form of a sqlite3.Row class not a regular tuple. 
         conn.row_factory = sqlite3.Row
         print("Connection to Database Successfull")
     except: 
@@ -33,11 +37,20 @@ def index():
     languages = ""
     type = ""
 
+    #Establish connection to sql database.
     connection = get_Database_Connection()
 
+    #If application recieved "POST" Request. 
+    #   Post requests are sent by users either through: 
+    #   * clicking the submit button on the page. 
+    #   * when they just loaded the page. 
     if (request.method == 'POST'):
         print("POST recieved")
         try: 
+            #From the POST Request, get all the languages that have been chosen. 
+            #   * The full list of languages are seen in Home.html. 
+            #   * As seen in Home.html users pick languages by clicking their
+            #   * corresponding check box. 
             languageList = request.form.getlist('language')
 
             for language in languageList: 
@@ -96,6 +109,7 @@ def get_linkName():
 #THIS CODE IS FOR PROJECT PAGES
 @app.route('/new_Page')
 def new_Page():
+    #Establish connection to the sql database
     connection = get_Database_Connection()
     result = functions.getProjectData(connection, chosenProject)
 
