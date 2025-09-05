@@ -1,0 +1,358 @@
+.titleSection {
+    height: 10vw;
+    background-color: none;
+
+    margin: 0vw;
+    padding: 0vw;
+
+    display: grid; 
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(1, 5vw);
+}
+
+.footerSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vw;
+
+    background-color: mediumturquoise;
+}
+
+.updateListSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5vw, 10vw;
+
+    background-color: mediumturquoise;
+}
+
+#updateSectionHeader {
+    grid-row: 1;
+    grid-column: 1; 
+
+    font-size: 3vw; 
+    font-weight: bold; 
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    background-color: grey; 
+    color: black; 
+
+    
+}
+
+#updateSectionHeader h2 {
+    
+    margin-top: 0vw; 
+    margin-bottom: 0vw; 
+
+    
+}
+
+#update {
+    display: grid; 
+    grid-template-columns: 1fr 5fr; 
+    grid-template-rows: 1fr 5fr
+}
+
+#updateDate {
+    grid-column: 1; 
+    grid-row: 1; 
+
+    font-size: 2vw; 
+}
+
+#updateDate p {
+    margin: 0vw; 
+    padding: 0vw; 
+}
+
+#updateMessage {
+    grid-column: 2; 
+    grid-row: 2; 
+
+    font-size: 2vw; 
+}
+
+#updateMessage p {
+    margin: 0vw; 
+    padding: 0vw;
+}
+
+
+
+#summarySection {
+    display: grid; 
+    grid-template-columns: 1fr 30fr 1fr;
+    grid-template-rows: 5vw, 20vw;
+
+}
+
+#summaryTitle {
+    grid-row: 1;
+    grid-column: 2;
+    
+    background-color: grey;
+
+    font-size: 2vw; 
+
+    margin: 0vw; 
+    padding: 0vw;
+}
+
+#summaryTitle h2{
+    margin: 1vw; 
+}
+
+#summmaryContents {
+    grid-row: 2;
+    grid-column: 2; 
+    
+    background-color: white;
+
+    font-size: 2vw;
+
+    padding: 1vw;
+}
+
+
+
+#summaryContents p {
+    padding: 10vw;
+    margin: 10vw;
+    
+}
+
+#filterTitle {
+    background-color: grey;
+
+    grid-column: 2; 
+    grid-row: 1;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    
+    border: solid; 
+    border-left: none;
+}
+
+#filterTitle h2 {
+    font-size: 3vw; 
+}
+
+#filters {
+    background-color: lightgray;
+    
+    grid-column: 2;
+    grid-column: 2;
+
+    font-size: 2vw;
+
+    display: grid; 
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 10vw); 
+
+    padding: 1vw; 
+}
+
+#filters h3 {
+    padding: 0vw;
+
+    margin-top: 1vw; 
+
+    font-size: 2vw; 
+
+}
+
+#filters p {
+    padding: 0vw;
+    margin: 0vw; 
+}
+
+#languageFilters {
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+#languages {
+    /* Add stuff later like "display: none;" */
+    display: none; 
+    flex-direction: column;
+    
+}
+
+
+#projectTypeFilters {
+    grid-column: 1;
+    grid-row: 2;
+    max-height: 10vw;
+}
+
+#projectTypes {
+    /* Add stuff later like "display: none; " */
+    display: none;
+}
+
+#subjetFilter {
+    grid-column: 1; 
+    grid-row: 3; 
+
+}
+
+#subjects {
+    /* Add stuff later like "display: none; " */
+    display: none; 
+}
+
+.submitButton {
+    grid-column: 1; 
+    grid-row: 4;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    margin: 1vw
+}
+
+.submitButton input {
+    font-size: 2vw;
+}
+
+
+.filterInstance {
+    background-color: lightskyblue;
+    border: solid; 
+    border-width: 0.5vw;
+    margin: 0vw;
+}
+
+.filterInstance:hover {
+    color: blue; 
+}
+
+
+
+
+
+.interactiveSection {
+    margin: 0vw;
+    padding: 1vw;
+
+    display: grid; 
+    grid-template-columns: 0.1fr 1fr 2fr 0.1fr;
+    grid-template-rows: 5vw 50vw;
+
+}
+
+#output {
+    grid-column: 3/4;
+    grid-row: 2/2;
+
+    background-color: white;
+}
+
+#outputTitle {
+    grid-column: 3/4;
+    grid-row: 1/2;
+
+    background-color: grey;
+
+    margin: 0vw; 
+    padding: 0vw;
+
+    border: solid; 
+    border-left: none;
+    border-right: none;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+
+#outputTitle h2 {
+    font-size: 3vw;
+    position: relative; 
+}
+
+.outputCells {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(1, 5vw); 
+
+}
+
+.cell {
+    padding: 1vw;
+}
+
+.cell a button {
+    font-size: 2vw;
+}
+
+
+
+#title {
+    grid-column: 2/3;
+    background-color: lightblue;
+    border: solid;
+
+    position: relative; 
+    top: 2vw; 
+}
+
+#title p {
+    color: black;
+    font-size: 3vw;
+
+    padding: 0px;
+    margin:  0px;
+
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    position: relative; 
+    top: 1vw; 
+
+}
+
+
+body {
+    background-image: url('images/background.jpg');
+    /* background-color:bisque; */
+    background-size: contain;
+
+  
+}
+
+@media (max-width: 492px) {
+    #summmaryContents {
+        grid-row: 2;
+        grid-column: 2; 
+        
+        background-color: white;
+    
+        font-size: 1vw;
+    
+        padding: 1vw;
+    }
+
+    #filters h3 {
+        padding: 0vw;
+    
+        margin-top: 1vw; 
+    
+        font-size: 1vw; 
+    
+    }
+
+    
+}
